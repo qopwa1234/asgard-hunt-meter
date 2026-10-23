@@ -1,0 +1,12 @@
+core/target/
+gui/**/bin/
+gui/**/obj/
+*.user
+.vs/
+sessions/
+out/
+verify/
+dist/
+publish/
+package/
+
