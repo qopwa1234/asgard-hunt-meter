@@ -1,0 +1,76 @@
+name: release-check
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag"
+        required: true
+        default: "v0.3.3"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: |
+          set -euo pipefail
+          mkdir -p release-assets
+          gh release download "$TAG" --dir release-assets \
+            --pattern 'AsgardHuntMeter-*.zip' \
+            --pattern 'AsgardHuntMeter-*.zip.sha256' \
+            --pattern 'asgard-icons.zip'
+          ls -l release-assets
+
+      - name: Verify app package
+        shell: bash
+        run: |
+          set -euo pipefail
+          zip=$(find release-assets -maxdepth 1 -name 'AsgardHuntMeter-*.zip' -print -quit)
+          sha=$(find release-assets -maxdepth 1 -name 'AsgardHuntMeter-*.zip.sha256' -print -quit)
+          expected=$(awk '{print $1}' "$sha")
+          actual=$(sha256sum "$zip" | awk '{print $1}')
+          test "$expected" = "$actual"
+          python3 - "$zip" <<'PY'
+          import sys
+          import zipfile
+
+          with zipfile.ZipFile(sys.argv[1]) as z:
+              names = set(z.namelist())
+          required = {"AsgardHuntMeter.exe", "README.txt"}
+          missing = sorted(required - names)
+          if missing:
+              raise SystemExit(f"missing files: {missing}")
+          forbidden = sorted(n for n in names if n.lower().endswith((".rs", ".cs", ".pdb", ".dll", ".json")))
+          if forbidden:
+              raise SystemExit(f"unexpected files: {forbidden}")
+          print(f"app entries={len(names)}")
+          PY
+
+      - name: Verify icon pack
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import glob
+          import json
+          import zipfile
+
+          path = glob.glob("release-assets/asgard-icons.zip")[0]
+          with zipfile.ZipFile(path) as z:
+              names = z.namelist()
+              pngs = [n for n in names if n.lower().endswith(".png")]
+              manifest = json.loads(z.read("manifest.json")) if "manifest.json" in names else {}
+          if not pngs:
+              raise SystemExit("no icons")
+          print(f"icons={len(pngs)} manifest={manifest}")
+          PY
