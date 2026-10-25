@@ -1,0 +1,33 @@
+name: 버그 리포트
+description: 동작 오류/크래시를 제보합니다.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: 버전
+      placeholder: "예: 0.2.0 / dist zip 이름"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Windows 버전
+      placeholder: "예: Windows 11 24H2"
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 방법
+      placeholder: "1) ... 2) ... 3) ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대/실제 동작
+  - type: textarea
+    id: logs
+    attributes:
+      label: 로그/스크린샷
+      description: 설정 → 로그 저장, 또는 %APPDATA%\\AsgardHuntMeter 로그를 첨부해 주세요.
