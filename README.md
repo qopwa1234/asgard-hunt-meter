@@ -1,8 +1,8 @@
 <div align="center">
 
-# Asgard Hunt Meter
+# 아스가르드 트래커
 
-**아스가르드 사냥 수익을 한눈에 보여주는 Windows용 측정 도구**
+**아스가르드 사냥 수익을 한눈에 보여주는 Windows용 트래커**
 
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-4c8dff?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-45e0a0?style=flat-square)](LICENSE)
@@ -13,13 +13,13 @@
 </div>
 
 <p align="center">
-  <img src="docs/preview.png" alt="Asgard Hunt Meter 미리보기" width="100%">
+  <img src="docs/preview.png" alt="아스가르드 트래커 미리보기" width="100%">
   <br><sub>실시간 수익 대시보드와 커뮤니티 기능</sub>
 </p>
 
 ## 소개
 
-Asgard Hunt Meter는 게임 플레이 정보를 실시간으로 정리해 주는 Windows용 사냥 수익 측정 도구입니다.
+아스가르드 트래커는 게임 플레이 정보를 실시간으로 정리해 주는 Windows용 사냥 수익 트래커입니다.
 
 게임 조작, 자동 사냥, 메모리 읽기/주입 기능은 포함하지 않습니다. 게임 이용약관과 계정 보안은 사용자 책임입니다.
 
@@ -50,6 +50,8 @@ Asgard Hunt Meter는 게임 플레이 정보를 실시간으로 정리해 주는
 1. [Releases](https://github.com/qopwa1234/asgard-hunt-meter/releases/latest)에서 `AsgardHuntMeter-*.zip`을 다운로드합니다.
 2. 원하는 폴더에 압축을 풉니다.
 3. `AsgardHuntMeter.exe`를 **관리자 권한으로 실행**합니다.
+
+> 표시 이름은 **아스가르드 트래커**로 변경되었습니다. 기존 업데이트·설정 호환을 위해 실행 파일명과 데이터 폴더명은 그대로 유지됩니다.
 
 ### 요구 사항
 
