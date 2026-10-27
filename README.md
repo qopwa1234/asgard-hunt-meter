@@ -6,9 +6,9 @@
 
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-4c8dff?style=flat-square)](#)
 [![License](https://img.shields.io/badge/license-MIT-45e0a0?style=flat-square)](LICENSE)
-[![Latest Release](https://img.shields.io/github/v/release/qopwa1234/asgard-hunt-meter?style=flat-square&color=ffcf5c)](https://github.com/qopwa1234/asgard-hunt-meter/releases/latest)
+[![Latest Release](https://img.shields.io/github/v/release/qopwa1234/asgard-tracker?style=flat-square&color=ffcf5c)](https://github.com/qopwa1234/asgard-tracker/releases/latest)
 
-[최신 버전 다운로드](https://github.com/qopwa1234/asgard-hunt-meter/releases/latest) · [소개 페이지](https://qopwa1234.github.io/asgard-hunt-meter/)
+[최신 버전 다운로드](https://github.com/qopwa1234/asgard-tracker/releases/latest) · [소개 페이지](https://qopwa1234.github.io/asgard-tracker/)
 
 </div>
 
@@ -47,7 +47,7 @@
 
 ## 다운로드
 
-1. [Releases](https://github.com/qopwa1234/asgard-hunt-meter/releases/latest)에서 `AsgardHuntMeter-*.zip`을 다운로드합니다.
+1. [Releases](https://github.com/qopwa1234/asgard-tracker/releases/latest)에서 `AsgardHuntMeter-*.zip`을 다운로드합니다.
 2. 원하는 폴더에 압축을 풉니다.
 3. `AsgardHuntMeter.exe`를 **관리자 권한으로 실행**합니다.
 
@@ -81,7 +81,7 @@
 - 새 버전 확인 → 다운로드 → 무결성 검증 → 앱 자동 재시작
 - 설정·세션 기록은 `%APPDATA%`에 보존
 
-업데이트가 실패하면 [Releases](https://github.com/qopwa1234/asgard-hunt-meter/releases/latest)에서 ZIP을 직접 받아 기존 폴더에 덮어써도 됩니다.
+업데이트가 실패하면 [Releases](https://github.com/qopwa1234/asgard-tracker/releases/latest)에서 ZIP을 직접 받아 기존 폴더에 덮어써도 됩니다.
 
 ## 커뮤니티 (선택)
 

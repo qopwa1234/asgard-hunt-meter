@@ -262,7 +262,7 @@
   (function () {
     const parts = location.hostname.split('.');
     const owner = parts[0] === 'www' ? parts[1] : parts[0];
-    const repo = location.pathname.split('/').filter(Boolean)[0] || 'asgard-hunt-meter';
+    const repo = location.pathname.split('/').filter(Boolean)[0] || 'asgard-tracker';
     const base = (location.hostname.endsWith('github.io') && owner && owner !== 'localhost')
       ? `https://github.com/${owner}/${repo}`
       : 'https://github.com';
